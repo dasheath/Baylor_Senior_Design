@@ -1,0 +1,86 @@
+/*
+ * Authors: Heath McCabe, Breana Leal
+ * Project: Fuel Injector Demo Model
+ * Course: EGR 4390, Spring 2019
+ * POE: Dr. Don McErlean
+ * 
+ * This should monitor an input pin, and set the Motor to an on or off state
+ * depending on the input pin
+ * 
+ */
+
+// Set pin numbers ---------- ---------- ----------
+#define motorControlPin 12    // Output pin used to send control signal to motor
+#define monitorPin      13    // Input pin used to monitor whether button is pressed
+#define USE_SERIAL      0     // Set to 1 if serial printing is needed for testing
+#define period          1000  // ms
+#define maxTime         10    // How long motor will stay on after button press
+
+// Define state variables ---------- ----------
+bool monitorState = false, monitorPrevState = false, motorState = false;
+unsigned long time_now = 0;
+int motorTime = 0;            // How much longer the motor should be on
+
+// ---------- SETUP ----------
+void setup() {
+  // Open serial port if needed for testing purposes 
+  if(USE_SERIAL){
+    Serial.begin(115200);
+  }
+  
+  // Initialize IO pins
+  pinMode(monitorPin, INPUT);
+  pinMode(motorControlPin, OUTPUT);
+  digitalWrite(motorControlPin, motorState);
+}
+
+// ---------- LOOP ----------
+void loop() {
+
+  // Check the monitor pin
+  monitorState = digitalRead(monitorPin);
+  
+  // Check for rising edge on the monitorPin
+  if(monitorState && !monitorPrevState){
+    
+    // Set the motor time to max
+    motorTime = maxTime;
+    
+    if(USE_SERIAL){
+      Serial.print("Button pressed\n");
+    }
+  }
+
+  // Update state variable
+  monitorState = monitorPrevState;
+
+
+  // Handle turning on / off motor
+  if(motorTime == maxTime){
+    // Turn on the motor
+    motorState = true;
+    power_motor( motorState );
+  } else if(motorTime == 0) {
+    // Turn off the motor
+    motorState = false;
+    power_motor( motorState );
+  }
+
+  // Decrease motor time variable if 1 second has passed
+  if(millis() > (time_now + period)){
+        motorTime = motorTime - 1;
+        time_now = millis();
+
+        if(USE_SERIAL){
+          Serial.print("Motor Time:");
+          Serial.print(motorTime);
+          Serial.print("\n\n");
+        }
+    }
+}
+
+//----------------------------------------------------------------
+// Writes state to the motorControlPin to turn on or off the motor
+void power_motor(bool state){
+  digitalWrite(motorControlPin, state);
+}
