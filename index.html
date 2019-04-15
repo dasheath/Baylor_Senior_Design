@@ -16,15 +16,19 @@
 				<!-- One -->
 					<section class="banner style1 orient-center content-align-center image-position-center orient-center onload-image-fade-in fullscreen onload-content-fade-right color7">
 						<div class="content">
-							<h1>Heath McCabe</h1>
-							<p class="major">Seniod Design project at Baylor University.</p>
+							<h1> <a href="https://www.heath-mccabe.com/">Heath McCabe</a></h1>
+                            <p class="major">Senior Design project at Baylor University.</p>
+                            <p> 
+                                Thanks to collaborators <a href="https://www.linkedin.com/in/robert-girdner-34188b12b/">Robert Girdner</a>,
+                                <a href="https://www.linkedin.com/in/breana-leal2018/">Breana Leal</a>, and Morgan Oberle.
+                            </p>
 							
-							<ul class="actions fit"><li><a href="#req" class="button primary fit smooth-scroll">Btn 1</a></li></ul>
-							<ul class="actions fit"><li><a href="#mech" class="button primary fit smooth-scroll">Btn 2</a></li></ul>
-							<ul class="actions fit"><li><a href="#elc" class="button primary fit smooth-scroll">Btn 3</a></li></ul>
+							<ul class="actions fit"><li><a href="#" class="button primary fit smooth-scroll">Btn 1</a></li></ul>
+							<ul class="actions fit"><li><a href="#" class="button primary fit smooth-scroll">Btn 2</a></li></ul>
+							<ul class="actions fit"><li><a href="#" class="button primary fit smooth-scroll">Btn 3</a></li></ul>
 						</div>
 						<div class="image">
-							<img class="img" src="JrDes/Final Report/Full_View.PNG" alt=""/>
+							<img class="img" src="images/solidworks_model.png" alt=""/>
 						</div>
                     </section>
                     
@@ -37,23 +41,17 @@
                                     <!-- Requirements -->
                                         <section id="req">
                                             <header>
-                                                <h3>Requirements</h3>
+                                                <h3>Objective</h3>
                                             </header>
                                             <div class="content">
     
-                                                <p>The core thrust of Junior Design is to construct an autonomousrobot/mechatronic device. 
-                                                    This task requires the collaboration and clever ideas of students with various 
-                                                    aptitudes including Solidworks, programming, and circuit design.
-                                                    <br/>
-                                                    The assignment for our semester was to drive your robot down a course and have it
-                                                    drop balls into Y-tubes on the first pass, turn around, then place balls on top 
-                                                    of the Y-tubes on the return trip.
-                                                    <br/>
-                                                    <!-- Photos of the course and robot would help -->
-                                                    <a href="JrDes/EGR_3380_Project_RFP_Spring_2018.pdf">Request For Proposals Document</a>
-													<!-- Final Report Document -->
-													<br/>
-                                                    <a href="JrDes/Final_Report.pdf">Final Report Document</a>
+                                                <p>
+                                                    Our goal to was design a simple demonstration of fuel
+                                                    injection which conveys the fundamentals to a
+                                                    non-technical audience. Our target audience is
+                                                    non-technical adults and children. We also sought to make
+                                                    the point that a physical disability does not prevent one
+                                                    from pursuing engineering.
                                                 </p>
                                             </div>
                                         </section>
@@ -65,39 +63,25 @@
                                             </header>
                                             <div class="content">
     
-                                                <p>The robot used a single DC motor to drive using a track setup.
-                                                    We had two identical dispensors which were controlled by stepper motors.
-                                                    Our base was made of wood, our dispensors were 3D printed in ABS, and
-                                                    our tracks were plastic (from VEX).
+                                                <p> Piping overview. Fluid mechanics.
                                                 </p>
-						<div class="image fit">
-							<image class="img" src="JrDes/Final Report/MultiView_Full.PNG" alt="Schematic" />
-							Model
-					    	</div>
+
                                             </div>
                                         </section>
 
                                     <!-- Electrical and Code -->
-                                    <!-- I'd like collapsable blocks of code showing code for
-                                            the different projects I've done -->
                                         <section id="elc">
                                             <header>
-                                                <h3>Electrical and Code</h3>
+                                                <h3>Electrical Circuit Design</h3>
                                             </header>
                                             <div class="content">
     
-                                                <p>Our task as electrical engineers was to create a system to drive the robot
-                                                    down the course and back, and to design a system to control stepper motors
-                                                    in the dispensors.
-                                                    <br/>
-                                                    We created a DC motor control circuit with direction control.
-                                                    <!-- Schematics -->
-                                                    <div class="image">
-                                                        <image class="img" src="images/full_schematic.PNG" alt="Schematic" />
-                                                        Circuit schematic
-                                                    </div>
-                                                        <!-- I'd like a schematic that shows the sensors,
-                                                        and I need to show off the code somehow -->
+                                                <p>
+                                                    Our circuit takes in AC power from the wall, converts to DC power to 
+                                                    power our Arduino, relay board, and valve and to provide voltage to our button.
+                                                    
+                                                    If we wish for the motor to be powered, we send a signal to a relay to close the contacts 
+                                                    connects AC line to the outlet.
                                                 </p>
                                             </div>
                                         </section>
