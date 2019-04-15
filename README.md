@@ -5,6 +5,4 @@
 * Spring Semester, 2019
 * POE: Dr. Donald McErlean, Dr. Jonathan Hu
 
-We have the block quote
-
-> We did this
+> This project will require further modifications before final presentation in the Mayborn Museum. We designed a first prototype for what we hope our colleagues will improve in the future. Please see our design documentation here for your reference.
